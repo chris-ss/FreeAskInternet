@@ -1,6 +1,6 @@
 services:
   backend:
-    image: docker.io/nashsu/free_ask_internet:latest
+    image: docker.io/duriancat/free_ask_internet:1.0
     depends_on:
       - aurora
     restart: on-failure

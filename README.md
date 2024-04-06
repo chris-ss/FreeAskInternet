@@ -25,7 +25,7 @@ FreeAskInternet is a completely free, private and locally running search aggrega
 ## How It Works? 
 
 1. System get user input question in ChatGPT-Next-Web ( running locally), and call searxng (running locally) to make search on multi search engine.
-2. crawl search result links content and pass to ChatGPT3.5 (using OpenAI ChatGPT3.5, through FreeGPT35 running locally), ask ChatGPT3.5 to answer user question based on this contents as references.
+2. crawl search result links content and pass to ChatGPT3.5 (using OpenAI ChatGPT3.5, through aurora running locally), ask ChatGPT3.5 to answer user question based on this contents as references.
 3. Stream the answer to ChatGPT-Next-Web Chat UI.
 
 ## Status 
@@ -36,7 +36,7 @@ This project is still in its very early days. Expect some bugs.
 ### Run the latest release
 
 ```bash
-git clone https://github.com/nashsu/FreeAskInternet.git
+git clone https://github.com/chris-ss/FreeAskInternet.git
 cd ./FreeAskInternet
 docker-compose up -d 
 ```
@@ -50,7 +50,7 @@ docker-compose up -d
 cd ./FreeAskInternet
 git pull
 docker compose rm backend
-docker image rm nashsu/free_ask_internet
+docker image rm chris-ss/free_ask_internet
 docker-compose up -d
 ```
  
@@ -58,7 +58,7 @@ docker-compose up -d
 
 ## Credits
 - ChatGPT-Next-Web : [https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web](https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web)
-- FreeGPT35: [https://github.com/missuo/FreeGPT35](https://github.com/missuo/FreeGPT35)
+- aurora: [https://github.com/aurora-develop/aurora](https://github.com/aurora-develop/aurora)
 - searxng: [https://github.com/searxng/searxng](https://github.com/searxng/searxng)
 
 ## License

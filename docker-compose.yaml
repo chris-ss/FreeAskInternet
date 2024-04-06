@@ -2,7 +2,7 @@ services:
   backend:
     image: docker.io/nashsu/free_ask_internet:latest
     depends_on:
-      - freegpt35
+      - aurora
     restart: on-failure
  
 
@@ -16,12 +16,15 @@ services:
       BASE_URL: "http://backend:8000"
       CUSTOM_MODELS: "-all,+gpt-3.5-turbo"
     depends_on:
-      - freegpt35
+      - aurora
     restart: always
 
-  freegpt35:
-    image: missuo/freegpt35:latest
-    restart: always
+  aurora:
+    image: ghcr.io/aurora-develop/aurora:latest
+    container_name: aurora
+    restart: unless-stopped
+    ports:
+      - '8080:8080'
 
   searxng:
     image: docker.io/searxng/searxng:latest

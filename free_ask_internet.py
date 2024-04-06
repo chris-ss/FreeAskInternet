@@ -139,7 +139,7 @@ def gen_prompt(question,content_list, context_length_limit=11000,debug=False):
 
 
 def chat(prompt, stream=True, debug=False):
-    openai.base_url = "http://freegpt35:3040/v1/"
+    openai.base_url = "http://aurora:8080/v1/"
     openai.api_key = "EMPTY"
     total_content = ""
     for chunk in openai.chat.completions.create(

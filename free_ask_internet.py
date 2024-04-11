@@ -172,7 +172,7 @@ def chat(prompt, model:str,llm_auth_token:str,llm_base_url:str,using_custom_llm=
     openai.base_url = "http://127.0.0.1:3040/v1/"
 
     if model == "gpt3.5":
-        openai.base_url = "http://aurora:3040/v1/"
+        openai.base_url = "http://llm-aurora:3040/v1/"
     
     if model == "kimi":
         openai.base_url = "http://llm-kimi:8000/v1/"

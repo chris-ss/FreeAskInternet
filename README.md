@@ -52,7 +52,24 @@ cd ./FreeAskInternet
 docker-compose up -d 
 ```
 
+
+
 🎉 You should now be able to open the web interface on http://localhost:3000. Nothing else is exposed by default.( For old web interface, accessing  http://localhost:3030)
+
+
+
+[aurora](https://github.com/aurora-develop/aurora) powers the API for ChatGPT in this project.
+aurora Chatgpt-web interface on http://localhost:3040/web
+aurora Chatgpt API usage:
+```bash
+curl --location 'http://你的服务器ip:3040/v1/chat/completions' \
+--header 'Content-Type: application/json' \
+--data '{
+     "model": "gpt-3.5-turbo",
+     "messages": [{"role": "user", "content": "Say this is a test!"}],
+     "stream": true
+   }'
+```bash
 
 ## How to get and set Kimi / Qwen / ZhipuAI Token?
 

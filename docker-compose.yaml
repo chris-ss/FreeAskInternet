@@ -1,6 +1,6 @@
 services:
   backend:
-    image: docker.io/duriancat/free_ask_internet:1.0
+    image: docker.io/duriancat/free_ask_internet:2.0
     depends_on:
       - llm-aurora
     restart: on-failure

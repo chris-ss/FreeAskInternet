@@ -6,10 +6,20 @@ services:
     restart: on-failure
  
 
+  freeaskinternet-ui:
+    image: docker.io/nashsu/free_ask_internet_ui:latest
+    ports:
+      - "3000:80"
+    environment:
+      BACKEND_HOST: "backend:8000"
+    depends_on:
+      - backend
+    restart: always
+
   chatgpt-next-web:
     image: yidadaa/chatgpt-next-web
     ports:
-      - "3000:3000"
+      - "3030:3000"
     environment:
       OPENAI_API_KEY: "FreeAskInternet"
       # CODE: "FreeAskInternet" # 如果你想要设置页面的访问密码，请修改这里
@@ -25,6 +35,25 @@ services:
     restart: unless-stopped
     ports:
       - '8080:8080'
+
+  llm-kimi:
+    image: vinlic/kimi-free-api:latest
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+
+  llm-glm4:
+    image: vinlic/glm-free-api:latest
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+
+
+  llm-qwen:
+    image: vinlic/qwen-free-api:latest
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
 
   searxng:
     image: docker.io/searxng/searxng:latest

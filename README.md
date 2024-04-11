@@ -69,7 +69,7 @@ curl --location 'http://你的服务器ip:3040/v1/chat/completions' \
      "messages": [{"role": "user", "content": "Say this is a test!"}],
      "stream": true
    }'
-```bash
+```
 
 ## How to get and set Kimi / Qwen / ZhipuAI Token?
 

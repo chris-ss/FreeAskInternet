@@ -64,11 +64,11 @@ docker-compose up -d
 
 [aurora](https://github.com/aurora-develop/aurora) powers the API for ChatGPT in this project.
 
-aurora Chatgpt-web interface on http://localhost:3040/web
+aurora Chatgpt-web interface on http://localhost:8080/web
 
 aurora Chatgpt API usage:
 ```bash
-curl --location 'http://你的服务器ip:3040/v1/chat/completions' \
+curl --location 'http://你的服务器ip:8080/v1/chat/completions' \
 --header 'Content-Type: application/json' \
 --data '{
      "model": "gpt-3.5-turbo",

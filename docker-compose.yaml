@@ -1,6 +1,8 @@
 services:
   backend:
     image: docker.io/duriancat/free_ask_internet:latest
+    ports:
+      - "8000:8000"
     depends_on:
       - llm-aurora
     restart: on-failure
@@ -33,7 +35,7 @@ services:
     image: ghcr.io/aurora-develop/aurora:latest
     restart: unless-stopped
     ports:
-      - '3040:8080'
+      - '8080:8080'
     #environment: #aurora变量,用法请参考https://github.com/aurora-develop/aurora
       #BASE_URL="https://chat.openai.com/backend-api"
       #Authorization=your_authorization
